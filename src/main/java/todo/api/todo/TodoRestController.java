@@ -62,4 +62,10 @@ public class TodoRestController {
         TodoResource finishedTodoResource = beanMapper.map(finishedTodo, TodoResource.class);
         return finishedTodoResource;
     }
+
+    @RequestMapping(value="{todoId}", method = RequestMethod.DELETE) // (1)
+    @ResponseStatus(HttpStatus.NO_CONTENT) // (2)
+    public void deleteTodo(@PathVariable("todoId") String todoId) { // (3)
+        todoService.delete(todoId); // (4)
+    }
 }
