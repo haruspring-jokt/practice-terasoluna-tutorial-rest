@@ -12,4 +12,6 @@ public interface TodoService {
     Todo finish(String todoId);
 
     void delete(String todoId);
+
+    Todo findOne(String todoId);
 }
